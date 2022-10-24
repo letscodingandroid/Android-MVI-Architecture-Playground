@@ -1,7 +1,8 @@
-package ir.letscodingandroid.android_mvi_architecture_playground
+package ir.letscodingandroid.android_mvi_architecture_playground.ui.main
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import ir.letscodingandroid.android_mvi_architecture_playground.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
