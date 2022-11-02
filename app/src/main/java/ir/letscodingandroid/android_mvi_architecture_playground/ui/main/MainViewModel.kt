@@ -4,6 +4,8 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Transformations
 import androidx.lifecycle.ViewModel
+import ir.letscodingandroid.android_mvi_architecture_playground.model.BlogPostBean
+import ir.letscodingandroid.android_mvi_architecture_playground.model.UserBean
 import ir.letscodingandroid.android_mvi_architecture_playground.ui.main.state.MainStateEvent
 import ir.letscodingandroid.android_mvi_architecture_playground.ui.main.state.MainStateEvent.*
 import ir.letscodingandroid.android_mvi_architecture_playground.ui.main.state.MainViewState
@@ -33,6 +35,26 @@ class MainViewModel : ViewModel() {
                 AbsentLiveData.create()
             }
         }
+    }
+
+    fun setBlogListData(blogPosts : List<BlogPostBean>) {
+        val update = getCurrentViewStateOrNew()
+        update.blogPosts = blogPosts
+        _viewState.value = update
+    }
+
+    fun setUser(user : UserBean) {
+        val update = getCurrentViewStateOrNew()
+        update.user = user
+        _viewState.value = update
+    }
+
+    private fun getCurrentViewStateOrNew(): MainViewState {
+        return viewState.value ?: MainViewState()
+    }
+
+    fun setStateEvent(event : MainStateEvent) {
+        _stateEvent.value = event
     }
 
 }
