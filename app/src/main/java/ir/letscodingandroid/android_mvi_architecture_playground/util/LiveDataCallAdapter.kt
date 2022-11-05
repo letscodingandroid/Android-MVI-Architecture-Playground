@@ -1,5 +1,4 @@
-package com.codingwithmitch.mviexample.util
-
+package ir.letscodingandroid.android_mvi_architecture_playground.util
 
 import androidx.lifecycle.LiveData
 import retrofit2.Call

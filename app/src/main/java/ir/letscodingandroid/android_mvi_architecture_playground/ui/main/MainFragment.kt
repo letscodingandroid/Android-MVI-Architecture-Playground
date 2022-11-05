@@ -28,6 +28,8 @@ class MainFragment : Fragment() {
         mainVieModel = activity?.run {
             ViewModelProvider(this).get(MainViewModel::class.java)
         }?: throw Exception("Invalid activity")
+
+        subscribeObservers()
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
@@ -43,11 +45,11 @@ class MainFragment : Fragment() {
     }
 
     private fun triggerGetUserEvent() {
-        mainVieModel.setStateEvent(MainStateEvent.GetBlogPostsEvent())
+        mainVieModel.setStateEvent(MainStateEvent.GetUserEvent("1"))
     }
 
     private fun triggerGetBlogsEvent() {
-        mainVieModel.setStateEvent(MainStateEvent.GetUserEvent("1"))
+        mainVieModel.setStateEvent(MainStateEvent.GetBlogPostsEvent())
     }
 
     private fun subscribeObservers() {

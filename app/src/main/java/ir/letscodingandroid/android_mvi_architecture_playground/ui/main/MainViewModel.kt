@@ -6,6 +6,7 @@ import androidx.lifecycle.Transformations
 import androidx.lifecycle.ViewModel
 import ir.letscodingandroid.android_mvi_architecture_playground.model.BlogPostBean
 import ir.letscodingandroid.android_mvi_architecture_playground.model.UserBean
+import ir.letscodingandroid.android_mvi_architecture_playground.repository.main.MainRepository
 import ir.letscodingandroid.android_mvi_architecture_playground.ui.main.state.MainStateEvent
 import ir.letscodingandroid.android_mvi_architecture_playground.ui.main.state.MainStateEvent.*
 import ir.letscodingandroid.android_mvi_architecture_playground.ui.main.state.MainViewState
@@ -24,12 +25,13 @@ class MainViewModel : ViewModel() {
         }
 
     private fun handleMainStateEvent(mainStateEvent: MainStateEvent): LiveData<MainViewState> {
+        println("DEBUG: New StateEvent Detected: $mainStateEvent")
         return when (mainStateEvent) {
             is GetBlogPostsEvent -> {
-                AbsentLiveData.create()
+                MainRepository.getBlogPosts()
             }
             is GetUserEvent -> {
-                AbsentLiveData.create()
+                MainRepository.getUser(mainStateEvent.userId)
             }
             is None -> {
                 AbsentLiveData.create()
