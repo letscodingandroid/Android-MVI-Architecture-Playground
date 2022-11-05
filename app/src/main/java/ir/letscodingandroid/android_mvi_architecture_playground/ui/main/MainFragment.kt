@@ -1,17 +1,20 @@
 package ir.letscodingandroid.android_mvi_architecture_playground.ui.main
 
+import android.content.Context
 import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import ir.letscodingandroid.android_mvi_architecture_playground.R
+import ir.letscodingandroid.android_mvi_architecture_playground.ui.DataStateListener
 import ir.letscodingandroid.android_mvi_architecture_playground.ui.main.state.MainStateEvent
 
 class MainFragment : Fragment() {
 
     // its a reference to activity viewmodel
     private lateinit var mainVieModel : MainViewModel
+    private lateinit var dataStateHandler: DataStateListener
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -57,6 +60,9 @@ class MainFragment : Fragment() {
 
             println("DEBUG: DataState: $dataState")
 
+            // Handle Loading and Error Message
+            dataStateHandler.onDataStateChange(dataState)
+
             // Handle Data<T>
             dataState.data?.let { mainViewState ->
                 mainViewState.posts?.let {
@@ -67,17 +73,6 @@ class MainFragment : Fragment() {
                     mainVieModel.setUser(it)
                 }
             }
-
-            // Handle Error
-            dataState.message?.let {
-
-            }
-
-            // Handle loading
-            dataState.loading.let {
-
-            }
-
         })
 
         mainVieModel.viewState.observe(viewLifecycleOwner, Observer { viewState ->
@@ -91,5 +86,15 @@ class MainFragment : Fragment() {
 
             }
         })
+    }
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        try{
+            dataStateHandler = context as DataStateListener
+        }catch(e: ClassCastException){
+            println("$context must implement DataStateListener")
+        }
+
     }
 }
