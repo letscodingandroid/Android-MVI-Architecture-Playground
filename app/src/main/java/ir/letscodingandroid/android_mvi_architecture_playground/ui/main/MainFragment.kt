@@ -64,13 +64,15 @@ class MainFragment : Fragment() {
             dataStateHandler.onDataStateChange(dataState)
 
             // Handle Data<T>
-            dataState.data?.let { mainViewState ->
-                mainViewState.posts?.let {
-                    mainVieModel.setPostListData(it)
-                }
+            dataState.data?.let { event ->
+                event.getContentIfNotHandled()?.let { mainViewState ->
+                    mainViewState.posts?.let {
+                        mainVieModel.setPostListData(it)
+                    }
 
-                mainViewState.user?.let {
-                    mainVieModel.setUser(it)
+                    mainViewState.user?.let {
+                        mainVieModel.setUser(it)
+                    }
                 }
             }
         })
