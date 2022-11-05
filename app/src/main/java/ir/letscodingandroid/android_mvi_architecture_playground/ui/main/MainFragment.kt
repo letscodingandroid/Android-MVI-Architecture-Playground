@@ -56,12 +56,26 @@ class MainFragment : Fragment() {
         mainVieModel.dataState.observe(viewLifecycleOwner, Observer { dataState ->
 
             println("DEBUG: DataState: $dataState")
-            dataState.blogPosts?.let {
-                mainVieModel.setBlogListData(it)
+
+            // Handle Data<T>
+            dataState.data?.let { mainViewState ->
+                mainViewState.blogPosts?.let {
+                    mainVieModel.setBlogListData(it)
+                }
+
+                mainViewState.user?.let {
+                    mainVieModel.setUser(it)
+                }
             }
 
-            dataState.user?.let {
-                mainVieModel.setUser(it)
+            // Handle Error
+            dataState.message?.let {
+
+            }
+
+            // Handle loading
+            dataState.loading.let {
+
             }
 
         })

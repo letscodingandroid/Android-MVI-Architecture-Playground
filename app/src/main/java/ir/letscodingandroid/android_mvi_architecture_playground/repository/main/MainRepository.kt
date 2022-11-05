@@ -7,24 +7,25 @@ import ir.letscodingandroid.android_mvi_architecture_playground.ui.main.state.Ma
 import ir.letscodingandroid.android_mvi_architecture_playground.util.ApiEmptyResponse
 import ir.letscodingandroid.android_mvi_architecture_playground.util.ApiErrorResponse
 import ir.letscodingandroid.android_mvi_architecture_playground.util.ApiSuccessResponse
+import ir.letscodingandroid.android_mvi_architecture_playground.util.DataState
 
 object MainRepository {
 
-    fun getBlogPosts(): LiveData<MainViewState> {
+    fun getBlogPosts(): LiveData<DataState<MainViewState>> {
         return Transformations
             .switchMap(RetrofitBuilder.apiService.getBlogPosts()) { apiResponse ->
-                object: LiveData<MainViewState>() {
+                object: LiveData<DataState<MainViewState>>() {
                     override fun onActive() {
                         super.onActive()
-                        when(apiResponse) {
+                        value = when(apiResponse) {
                             is ApiSuccessResponse -> {
-                                value = MainViewState(blogPosts = apiResponse.body)
+                                DataState.data(data = MainViewState(blogPosts = apiResponse.body))
                             }
                             is ApiErrorResponse -> {
-                                value = MainViewState() // Handle error?
+                                DataState.data(data = MainViewState()) // Handle error?
                             }
                             is ApiEmptyResponse -> {
-                                value = MainViewState() // Handle empty/error?
+                                DataState.data(data = MainViewState()) // Handle empty/error?
                             }
                         }
                     }
@@ -32,21 +33,21 @@ object MainRepository {
             }
         }
 
-    fun getUser(userId: String): LiveData<MainViewState> {
+    fun getUser(userId: String): LiveData<DataState<MainViewState>> {
         return Transformations
             .switchMap(RetrofitBuilder.apiService.getUser(userId)) { apiResponse ->
-                object: LiveData<MainViewState>() {
+                object: LiveData<DataState<MainViewState>>() {
                     override fun onActive() {
                         super.onActive()
                         when(apiResponse) {
                             is ApiSuccessResponse -> {
-                                value = MainViewState(user = apiResponse.body)
+                                DataState.data(data = MainViewState(user = apiResponse.body))
                             }
                             is ApiErrorResponse -> {
-                                value = MainViewState() // Handle error?
+                                DataState.data(data = MainViewState()) // Handle error?
                             }
                             is ApiEmptyResponse -> {
-                                value = MainViewState() // Handle empty/error?
+                                DataState.data(data = MainViewState()) // Handle empty/error?
                             }
                         }
                     }
