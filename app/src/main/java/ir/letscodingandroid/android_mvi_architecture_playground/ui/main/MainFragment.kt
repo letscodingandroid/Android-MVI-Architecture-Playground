@@ -49,7 +49,7 @@ class MainFragment : Fragment() {
     }
 
     private fun triggerGetBlogsEvent() {
-        mainVieModel.setStateEvent(MainStateEvent.GetBlogPostsEvent())
+        mainVieModel.setStateEvent(MainStateEvent.GetPostsEvent())
     }
 
     private fun subscribeObservers() {
@@ -59,8 +59,8 @@ class MainFragment : Fragment() {
 
             // Handle Data<T>
             dataState.data?.let { mainViewState ->
-                mainViewState.blogPosts?.let {
-                    mainVieModel.setBlogListData(it)
+                mainViewState.posts?.let {
+                    mainVieModel.setPostListData(it)
                 }
 
                 mainViewState.user?.let {
@@ -83,7 +83,7 @@ class MainFragment : Fragment() {
         mainVieModel.viewState.observe(viewLifecycleOwner, Observer { viewState ->
 
             println("DEBUG: ViewState: $viewState")
-            viewState.blogPosts?.let {
+            viewState.posts?.let {
 
             }
 

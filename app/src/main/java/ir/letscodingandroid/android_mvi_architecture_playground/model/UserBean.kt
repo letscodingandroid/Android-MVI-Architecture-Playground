@@ -5,14 +5,9 @@ import com.google.gson.annotations.SerializedName
 
 data class UserBean(
     @Expose
-    @SerializedName("email")
-    val email: String? = null,
-
-    @Expose
     @SerializedName("username")
     val username: String? = null,
-
     @Expose
-    @SerializedName("image")
-    val image: String? = null
+    @SerializedName("email")
+    val email: String? = null
 )
