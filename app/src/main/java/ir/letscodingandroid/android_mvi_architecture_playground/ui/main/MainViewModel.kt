@@ -11,6 +11,7 @@ import ir.letscodingandroid.android_mvi_architecture_playground.ui.main.state.Ma
 import ir.letscodingandroid.android_mvi_architecture_playground.ui.main.state.MainStateEvent.*
 import ir.letscodingandroid.android_mvi_architecture_playground.ui.main.state.MainViewState
 import ir.letscodingandroid.android_mvi_architecture_playground.util.AbsentLiveData
+import ir.letscodingandroid.android_mvi_architecture_playground.util.DataState
 
 class MainViewModel : ViewModel() {
     private val _stateEvent: MutableLiveData<MainStateEvent> = MutableLiveData()
@@ -19,12 +20,12 @@ class MainViewModel : ViewModel() {
     val viewState: LiveData<MainViewState>
         get() = _viewState
 
-    val dataState: LiveData<MainViewState> = Transformations
+    val dataState: LiveData<DataState<MainViewState>> = Transformations
         .switchMap(_stateEvent) {
             handleMainStateEvent(it)
         }
 
-    private fun handleMainStateEvent(mainStateEvent: MainStateEvent): LiveData<MainViewState> {
+    private fun handleMainStateEvent(mainStateEvent: MainStateEvent): LiveData<DataState<MainViewState>> {
         println("DEBUG: New StateEvent Detected: $mainStateEvent")
         return when (mainStateEvent) {
             is GetBlogPostsEvent -> {
