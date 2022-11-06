@@ -1,4 +1,4 @@
-package ir.letscodingandroid.android_mvi_architecture_playground.ui.model
+package ir.letscodingandroid.android_mvi_architecture_playground.model
 
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
