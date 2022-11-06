@@ -16,6 +16,23 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[6405263c0121]" />
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="Android-MVI-Architecture-Playground" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
@@ -132,12 +149,20 @@
       <option name="project" value="LOCAL" />
       <updated>1667714500543</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="#Subject-line&#10;#1.try to keep under 50 characters&#10;#2.imperative&#10;#3.start with upper case&#10;#4.don't end with a period&#10;Sync&#10;#Multi-line description of commit if needed else subject is enough&#10;#1.feel free to be detailed&#10;#2.better to start with upper case&#10;#3.better to use imperative&#10;#4.end with a period&#10;&#10;#[Ticket: X]&#10;#Co-authored-by: name">
+      <created>1667716838262</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1667716838262</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="#Subject-line&#10;#1.try to keep under 50 characters&#10;#2.imperative&#10;#3.start with upper case&#10;#4.don't end with a period&#10;Add Event.kt to make observables observed only once until data changed&#10;#Multi-line description of commit if needed else subject is enough&#10;#1.feel free to be detailed&#10;#2.better to start with upper case&#10;#3.better to use imperative&#10;#4.end with a period&#10;&#10;#[Ticket: X]&#10;#Co-authored-by: name" />
     <MESSAGE value="#Subject-line&#10;#1.try to keep under 50 characters&#10;#2.imperative&#10;#3.start with upper case&#10;#4.don't end with a period&#10;Add recyclerview setup to show posts and set user properties&#10;#Multi-line description of commit if needed else subject is enough&#10;#1.feel free to be detailed&#10;#2.better to start with upper case&#10;#3.better to use imperative&#10;#4.end with a period&#10;&#10;#[Ticket: X]&#10;#Co-authored-by: name" />
-    <option name="LAST_COMMIT_MESSAGE" value="#Subject-line&#10;#1.try to keep under 50 characters&#10;#2.imperative&#10;#3.start with upper case&#10;#4.don't end with a period&#10;Add recyclerview setup to show posts and set user properties&#10;#Multi-line description of commit if needed else subject is enough&#10;#1.feel free to be detailed&#10;#2.better to start with upper case&#10;#3.better to use imperative&#10;#4.end with a period&#10;&#10;#[Ticket: X]&#10;#Co-authored-by: name" />
+    <MESSAGE value="#Subject-line&#10;#1.try to keep under 50 characters&#10;#2.imperative&#10;#3.start with upper case&#10;#4.don't end with a period&#10;Sync&#10;#Multi-line description of commit if needed else subject is enough&#10;#1.feel free to be detailed&#10;#2.better to start with upper case&#10;#3.better to use imperative&#10;#4.end with a period&#10;&#10;#[Ticket: X]&#10;#Co-authored-by: name" />
+    <option name="LAST_COMMIT_MESSAGE" value="#Subject-line&#10;#1.try to keep under 50 characters&#10;#2.imperative&#10;#3.start with upper case&#10;#4.don't end with a period&#10;Sync&#10;#Multi-line description of commit if needed else subject is enough&#10;#1.feel free to be detailed&#10;#2.better to start with upper case&#10;#3.better to use imperative&#10;#4.end with a period&#10;&#10;#[Ticket: X]&#10;#Co-authored-by: name" />
   </component>
 </project>
