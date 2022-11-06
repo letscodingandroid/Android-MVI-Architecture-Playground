@@ -1,8 +1,9 @@
-package ir.letscodingandroid.android_mvi_architecture_playground
+package ir.letscodingandroid.android_mvi_architecture_playground.ui.main
 
 import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
+import ir.letscodingandroid.android_mvi_architecture_playground.R
 
 class MainFragment : Fragment() {
 
@@ -11,7 +12,7 @@ class MainFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_main , container , false)
+        return inflater.inflate(R.layout.fragment_main, container , false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -20,7 +21,7 @@ class MainFragment : Fragment() {
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        inflater.inflate(R.menu.main_menu , menu)
+        inflater.inflate(R.menu.main_menu, menu)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
