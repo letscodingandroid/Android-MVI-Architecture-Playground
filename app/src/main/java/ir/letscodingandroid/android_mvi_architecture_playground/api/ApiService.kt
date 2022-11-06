@@ -1,9 +1,9 @@
 package ir.letscodingandroid.android_mvi_architecture_playground.api
 
 import androidx.lifecycle.LiveData
-import com.codingwithmitch.mviexample.util.GenericApiResponse
 import ir.letscodingandroid.android_mvi_architecture_playground.model.BlogPostBean
 import ir.letscodingandroid.android_mvi_architecture_playground.model.UserBean
+import ir.letscodingandroid.android_mvi_architecture_playground.util.GenericApiResponse
 import retrofit2.http.GET
 import retrofit2.http.Path
 

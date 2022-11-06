@@ -1,5 +1,6 @@
 package ir.letscodingandroid.android_mvi_architecture_playground.api
 
+import ir.letscodingandroid.android_mvi_architecture_playground.util.LiveDataCallAdapterFactory
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
@@ -11,6 +12,7 @@ object RetrofitBuilder {
         Retrofit.Builder()
             .baseUrl(BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
+            .addCallAdapterFactory(LiveDataCallAdapterFactory())
     }
 
     val apiService: ApiService by lazy {
