@@ -3,10 +3,10 @@ package ir.letscodingandroid.android_mvi_architecture_playground.model
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
-data class BlogPostBean(
+data class PostBean(
     @Expose
-    @SerializedName("pk")
-    val pk: Int? = null,
+    @SerializedName("id")
+    val id: Int? = null,
 
     @Expose
     @SerializedName("title")
@@ -14,9 +14,5 @@ data class BlogPostBean(
 
     @Expose
     @SerializedName("body")
-    val body: String? = null,
-
-    @Expose
-    @SerializedName("image")
-    val image: String? = null
+    val body: String? = null
 )

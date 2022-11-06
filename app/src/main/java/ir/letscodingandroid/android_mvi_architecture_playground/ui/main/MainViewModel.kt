@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Transformations
 import androidx.lifecycle.ViewModel
-import ir.letscodingandroid.android_mvi_architecture_playground.model.BlogPostBean
+import ir.letscodingandroid.android_mvi_architecture_playground.model.PostBean
 import ir.letscodingandroid.android_mvi_architecture_playground.model.UserBean
 import ir.letscodingandroid.android_mvi_architecture_playground.repository.main.MainRepository
 import ir.letscodingandroid.android_mvi_architecture_playground.ui.main.state.MainStateEvent
@@ -28,8 +28,8 @@ class MainViewModel : ViewModel() {
     private fun handleMainStateEvent(mainStateEvent: MainStateEvent): LiveData<DataState<MainViewState>> {
         println("DEBUG: New StateEvent Detected: $mainStateEvent")
         return when (mainStateEvent) {
-            is GetBlogPostsEvent -> {
-                MainRepository.getBlogPosts()
+            is GetPostsEvent -> {
+                MainRepository.getPosts()
             }
             is GetUserEvent -> {
                 MainRepository.getUser(mainStateEvent.userId)
@@ -40,9 +40,9 @@ class MainViewModel : ViewModel() {
         }
     }
 
-    fun setBlogListData(blogPosts : List<BlogPostBean>) {
+    fun setPostListData(blogPosts : List<PostBean>) {
         val update = getCurrentViewStateOrNew()
-        update.blogPosts = blogPosts
+        update.posts = blogPosts
         _viewState.value = update
     }
 

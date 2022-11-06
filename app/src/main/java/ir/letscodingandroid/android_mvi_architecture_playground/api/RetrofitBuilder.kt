@@ -6,7 +6,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 object RetrofitBuilder {
 
-    private const val BASE_URL: String = "https://open-api.xyz/"
+    private const val BASE_URL: String = "https://jsonplaceholder.typicode.com/"
 
     private val retrofitBuilder : Retrofit.Builder by lazy {
         Retrofit.Builder()
