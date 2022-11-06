@@ -40,8 +40,10 @@ class MainActivity : AppCompatActivity() , DataStateListener {
             showProgressBar(dataState.loading)
 
             // Handle Message
-            dataState.message?.let{ message ->
-                showToast(message)
+            dataState.message?.let{ event ->
+                event.getContentIfNotHandled()?.let { message ->
+                    showToast(message)
+                }
             }
         }
     }
