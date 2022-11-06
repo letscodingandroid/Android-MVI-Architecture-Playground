@@ -1,0 +1,37 @@
+R_DEF: Internal format may change without notice
+local
+color black
+color purple_200
+color purple_500
+color purple_700
+color teal_200
+color teal_700
+color white
+drawable ic_launcher_background
+drawable ic_launcher_foreground
+id action_get_blogs
+id action_get_user
+id activity_main_parent
+id blog_image
+id blog_title
+id container1
+id container2
+id email
+id email_input_layout
+id fragment_container
+id image
+id progress_bar
+id recycler_view
+id scroll_view
+id username
+id username_input_layout
+layout activity_main
+layout fragment_main
+layout layout_blog_list_item
+menu main_menu
+mipmap ic_launcher
+mipmap ic_launcher_round
+string app_name
+style Theme.AndroidMVIArchitecturePlayground
+xml backup_rules
+xml data_extraction_rules
